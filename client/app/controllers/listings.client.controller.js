@@ -87,9 +87,9 @@ angular.module('listings').controller('ListingsController', ['$scope', '$locatio
        var id = $stateParams.listingId;
 
        var listing = {
-         name: $scope.editlisting.name,
-         code: $scope.editlisting.code,
-         address: $scope.editlisting.address
+         name: $scope.name,
+         code: $scope.code,
+         address: $scope.address
        };
 
        Listings.update(id, listing)
@@ -105,7 +105,8 @@ angular.module('listings').controller('ListingsController', ['$scope', '$locatio
         Implement the remove function. If the removal is successful, navigate back to 'listing.list'. Otherwise, 
         display the error. 
        */
-		Listing.delete($stateParams.listingId).then(function(response) {
+	   var id = $stateParams.listingId;
+		Listings.delete(id).then(function(response) {
 			$state.go('listings.list',{successMessage: 'Listing successfully removed!'});
 		}, function(error) {
 			$scope.error = 'Unable to remove listing' + error;
