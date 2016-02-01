@@ -29,5 +29,9 @@ angular.module('listings').config(['$stateProvider', '$urlRouterProvider',
 		  url: '/map',
 		  templateUrl: 'app/views/map-listings.client.view.html'
 		})
+	   .state('listings.map', {
+        url: '/map',
+        templateUrl: 'app/views/map-listings.client.view.html'
+      })
   } 
 ]);
