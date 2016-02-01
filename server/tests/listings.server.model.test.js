@@ -12,7 +12,7 @@ var listing = {
 describe('Listing Schema Unit Tests', function() {
 
   before(function(done) {
-    mongoose.connect(config.test.db.uri);
+    mongoose.connect(config.db.uri);
     done();
   });
 
